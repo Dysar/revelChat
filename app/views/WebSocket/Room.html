@@ -10,38 +10,55 @@
     </div>
   </div>
 </h1>
+<div id="chatWrapper">
+        <div id="thread">
+                <script type="text/html" id="message_tmpl">
+                  {{raw "<%"}} if(event.Type == 'message') { %>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                        <p>{{raw "<%"}}= event.User %>: {{raw "<%"}}= event.Text %></p>
+                    </div>
+                  </div>
+                  {{raw "<%"}} } %>
+                  {{raw "<%"}} if(event.Type == 'join') { %>
+                  <div class="received_alert">
+                    <div class="received_withd_msg">
+                          <p>{{raw "<%"}}= event.User %> joined the room</p>
+                    </div>
+                  </div>
+                  {{raw "<%"}} } %>
+                  {{raw "<%"}} if(event.Type == 'leave') { %>
+                  <div class="received_alert">
+                    <div class="received_withd_msg">
+                          <p>{{raw "<%"}}= event.User %> left the room</p>
+                    </div>
+                  </div>
+                  {{raw "<%"}} } %>
+                  {{raw "<%"}} if(event.Type == 'quit') { %>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                          <p>You are disconnected!</p>
+                          <span class="time_date"> 11:01 AM    |    Today</span>
+                    </div>
+                  </div>
+                  {{raw "<%"}} } %>
+                  </script>
+        </div>
+  <div class="type_msg" id="newMessage">
+      <div class="input_msg_write">
+        <input type="text" class="write_msg" id="message" placeholder="Type a message" />
+        <button class="msg_send_btn" type="submit" id="send"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+      </div>
+  </div>
 
-<div id="thread">
-  <script type="text/html" id="message_tmpl">
-    <ul class="flex-container">
-            {{raw "<%"}} if(event.Type == 'message') { %>
-                  <li class="flex-item sidebar">{{raw "<%"}}= event.User %></li>
-                  <li class="flex-item main">{{raw "<%"}}= event.Text %></li>
-            {{raw "<%"}} } %>
-            {{raw "<%"}} if(event.Type == 'join') { %>
-              
-                <li class="flex-item sidebar">Notice</li>
-                <li class="flex-item main">{{raw "<%"}}= event.User %> joined the room</li>
-              
-            {{raw "<%"}} } %>
-            {{raw "<%"}} if(event.Type == 'leave') { %>
-              <li class="flex-item sidebar">Notice</li>
-              <li class="flex-item main">{{raw "<%"}}= event.User %> left the room</li>
-            {{raw "<%"}} } %>
-            {{raw "<%"}} if(event.Type == 'quit') { %>
-              <li class="flex-item sidebar">Important</li>
-              <li class="flex-item main">You are now disconnected!</li>
-            {{raw "<%"}} } %>
-    </ul>
-  </script>
 </div>
 
-<div class="input-group mb-3" id="newMessage">
+  <!-- <div class="input-group mb-3" id="newMessage">
     <input type="text" id="message" autocomplete="off" autofocus>
     <div class="input-group-append">
         <input type="submit" value="send" class="btn btn-dark" id="send">
     </div>
-  </div>
+  </div> -->
 
 
 <script type="text/javascript">
