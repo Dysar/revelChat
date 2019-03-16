@@ -5,7 +5,7 @@
 
   <h2>The Chat demonstration (from Play!)</h2>
 
-  <div id="signin">
+  <div class="form-group" id="signin">
     <form action="{{url "Application.EnterDemo"}}">
       {{if .flash.error}}
         <p class="error">
@@ -14,9 +14,13 @@
       {{end}}
       <p>
         <label for="nick">Choose a nick name</label>
-        <input type="text" name="user" id="user">
+        <input class="form-control" type="text" name="user" id="user" placeholder="Enter username" name="nick" required>
       </p>
       <p>
+        <label for="tel">Enter your phone number</label>
+        <input class="form-control" type="tel" name="phone" id="phone" placeholder="Enter phone number" required>
+      </p>
+      <!-- <p>
         <label for="nick">Demonstration</label>
         <select name="demo">
           <option></option>
@@ -24,10 +28,10 @@
           <option value="longpolling">Ajax, long polling</option>
           <option value="websocket">WebSocket</option>
         </select>
-      </p>
+      </p> -->
       <p>
         <label></label>
-        <input type="submit" id="enter" value="Enter the chat room">
+        <input type="submit" class="btn btn-primary" id="enter" value="Enter the chat room">
       </p>
     </form>
   </div>

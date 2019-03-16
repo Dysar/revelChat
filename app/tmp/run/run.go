@@ -131,7 +131,7 @@ func Register() {
 				Name: "EnterDemo",
 				Args: []*revel.MethodArg{ 
 					&revel.MethodArg{Name: "user", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "demo", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "phone", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
 				},
@@ -249,8 +249,8 @@ func Register() {
 	
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
 		"revelChat/app/controllers.Application.EnterDemo": { 
-			21: "user",
-			22: "demo",
+			22: "user",
+			23: "phone",
 		},
 	}
 	testing.TestSuites = []interface{}{ 

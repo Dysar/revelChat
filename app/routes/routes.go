@@ -111,12 +111,12 @@ func (_ tApplication) Index(
 
 func (_ tApplication) EnterDemo(
 		user string,
-		demo string,
+		phone string,
 		) string {
 	args := make(map[string]string)
 	
 	revel.Unbind(args, "user", user)
-	revel.Unbind(args, "demo", demo)
+	revel.Unbind(args, "phone", phone)
 	return revel.MainRouter.Reverse("Application.EnterDemo", args).URL
 }
 
