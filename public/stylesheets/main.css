@@ -1,71 +1,26 @@
 html, body {
-    background: #ddd;
-    padding: 0;
+    height: 100%;
     margin: 0;
-    font-family: Helvetica, Arial, Sans;
+    background: #7F7FD5;
+   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5)
 }
 
-#home {
-    margin: 100px auto;
+ h1 { 
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 100px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
     text-align: center;
-}
+} 
 
-#signin {
-    margin: 10px auto;
-    width: 400px;
-    border: 8px solid #333;
-    padding: 20px;
-    background: #fff;
-    text-align: left;
-}
-
-#signin p {
-    margin: 5px 0;
-}
-
-#signin label {
-    font-size: 14px;
-    display: block;
-    width: 150px;
-    text-align: right;
-    float: left;
-    margin-right: 5px;
-    padding-top: 2px;
-}
-
-#signin #nick {
-    margin-left: 10px;
-    width: 200px;
-}
-
-#signin #enter {
-    display: block;
-    margin: 10px 0 0 160px;
-}
-
-#signin .error {
-    background: #c00;
-    margin: 0 0 10px 0;
-    padding: 5px;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-}
-
-h1 {
-    background: #111;
-    margin: 0;
-    color: gold;
-    padding: 7px 14px;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-h1 a {
+/* h1 a {
     position: absolute;
     right: 1em;
     color: lightblue;
-}
+} */
 
 #thread {
     position: fixed;
@@ -73,10 +28,8 @@ h1 a {
     left: 14px;
     right: 14px;
     bottom: 100px;
-    background: white;
-    border-bottom: 3px solid #666;
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px;
-    overflow-y: scroll;
 }
 
 .message {
@@ -128,6 +81,70 @@ h1 a {
     padding-left: 115px;
 }
 
+
+input[type=button], input[type=submit], input[type=reset]  {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+    background-color: #39ace7;
+  }
+  
+  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  
+  input[type=text] {
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-weight: bold; 
+    display: inline-block;
+    font-size: 18px;
+    margin: 5px;
+    width: 85%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=text]:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=text]:placeholder {
+    color: #FAEEFF;
+  } 
 #newMessage {
     position: fixed;
     left: 14px;
@@ -140,5 +157,3 @@ h1 a {
     width: 70%;
     padding: 5px;
 } 
-
-/* Made with love by Mutiullah Samim*/

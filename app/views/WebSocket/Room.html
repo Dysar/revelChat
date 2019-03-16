@@ -1,8 +1,17 @@
 {{set . "title" "Chat room"}}
 {{template "header.html" .}}
 
-<h1>WebSocket — You are now chatting as {{.user}}
-  <a href="/">Leave the chat room</a></h1>
+<h1>
+  <div class="row">
+    <div class="col-sm-8 bg-info">You are now chatting as {{.user}}!</div> 
+    <div class="col-sm-2 bg-warning">Tired?</div>  
+    <div class="col-sm-2 bg-dark">  
+      <a id="leave" href="/">Leave</a>
+    </div>
+  </div>
+</h1>
+<!-- <h1>WebSocket — You are now chatting as {{.user}}
+  <a href="/">Leave the chat room</a></h1> -->
 
 <div id="thread">
   <script type="text/html" id="message_tmpl">
@@ -42,8 +51,10 @@
 </div>
 
 <div id="newMessage">
+  <form>
   <input type="text" id="message" autocomplete="off" autofocus>
-  <input type="submit" value="send" id="send">
+  <input type="submit" value="send" class="btn btn-dark" id="send">
+</form>
 </div>
 
 <script type="text/javascript">
