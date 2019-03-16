@@ -1,38 +1,39 @@
 {{set . "title" "Sign in"}}
-{{template "header.html" .}}
+{{template "headerIndex.html" .}}
 
-<div id="home">
+<!--<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="form-group">
+        <form action="{{url "Application.EnterDemo"}}">
+            {{if .flash.error}}
+              <p class="error">
+                {{.flash.error}}
+              </p>
+            {{end}}
+            <p>
+      <input type="text" id="user" class="fadeIn second" name="user" placeholder="Enter username" required>
+      <input type="text" id="password" class="fadeIn third" name="phone" placeholder="Enter phone number" name="phone" required>
+      <input type="submit" class="fadeIn fourth"  value="Enter the chat room">
+    </form>
+  </div>
 
-  <h2>The Chat demonstration (from Play!)</h2>
+  </div>
+</div>
+-->
 
-  <div class="form-group" id="signin">
+
+<div class="wrapper fadeInDown">
+
+  <div class="form-group" id="formContent">
     <form action="{{url "Application.EnterDemo"}}">
       {{if .flash.error}}
         <p class="error">
           {{.flash.error}}
         </p>
       {{end}}
-      <p>
-        <label for="nick">Choose a nick name</label>
-        <input class="form-control" type="text" name="user" id="user" placeholder="Enter username" name="nick" required>
-      </p>
-      <p>
-        <label for="tel">Enter your phone number</label>
-        <input class="form-control" type="tel" name="phone" id="phone" placeholder="Enter phone number" required>
-      </p>
-      <!-- <p>
-        <label for="nick">Demonstration</label>
-        <select name="demo">
-          <option></option>
-          <option value="refresh">Ajax, active refresh</option>
-          <option value="longpolling">Ajax, long polling</option>
-          <option value="websocket">WebSocket</option>
-        </select>
-      </p> -->
-      <p>
-        <label></label>
+        <input type="text" name="user" id="user" class="fadeIn second" placeholder="Choose a nick name" name="nick" required>
+        <input type="text" name="phone" id="phone" class="fadeIn third" placeholder="Enter your phone number" required>
         <input type="submit" class="btn btn-primary" id="enter" value="Enter the chat room">
-      </p>
     </form>
   </div>
 
