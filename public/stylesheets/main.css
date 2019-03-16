@@ -1,9 +1,10 @@
 html, body {
     height: 100%;
     margin: 0;
-    background: #7F7FD5;
-   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5)
+    background: #5b507e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5b507e, #5b507e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5b507e, #5b507e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
  h1 { 
@@ -16,7 +17,7 @@ html, body {
     text-align: center;
 }
 
-#thread {
+  #thread {
     position: fixed;
     top: 50px;
     left: 14px;
@@ -25,6 +26,43 @@ html, body {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 50px;
+    
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+  }
+  
+  .sidebar { flex: 1; }
+  .main    { flex: 7; }
+  
+  .flex-item {
+    background: #FFCD66;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid rgba(0,0,0,.2);
+    
+    color: #5B507E;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+  }
 
 .message {
     border-bottom: 1px solid #efefef;
@@ -74,6 +112,7 @@ html, body {
     margin: 0;
     padding-left: 115px;
 }
+
 
 #newMessage {
     position: fixed;
