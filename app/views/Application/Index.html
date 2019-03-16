@@ -1,26 +1,6 @@
 {{set . "title" "Sign in"}}
 {{template "headerIndex.html" .}}
 
-<!--<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <div class="form-group">
-        <form action="{{url "Application.EnterDemo"}}">
-            {{if .flash.error}}
-              <p class="error">
-                {{.flash.error}}
-              </p>
-            {{end}}
-            <p>
-      <input type="text" id="user" class="fadeIn second" name="user" placeholder="Enter username" required>
-      <input type="text" id="password" class="fadeIn third" name="phone" placeholder="Enter phone number" name="phone" required>
-      <input type="submit" class="fadeIn fourth"  value="Enter the chat room">
-    </form>
-  </div>
-
-  </div>
-</div>
--->
-
 
 <div class="wrapper fadeInDown">
 
@@ -33,7 +13,7 @@
       {{end}}
         <input type="text" name="user" id="user" class="fadeIn second" placeholder="Choose a nick name" name="nick" required>
         <input type="text" name="phone" id="phone" class="fadeIn third" placeholder="Enter your phone number" required>
-        <input type="submit" class="btn btn-primary" id="enter" value="Enter the chat room">
+        <input type="submit" id="enter" class="fadeIn fourth" value="Enter the chat room">
     </form>
   </div>
 
