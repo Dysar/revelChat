@@ -10,8 +10,6 @@
     </div>
   </div>
 </h1>
-<!-- <h1>WebSocket — You are now chatting as {{.user}}
-  <a href="/">Leave the chat room</a></h1> -->
 
 <div id="thread">
   <script type="text/html" id="message_tmpl">
@@ -50,12 +48,13 @@
   </script>
 </div>
 
-<div id="newMessage">
-  <form>
-  <input type="text" id="message" autocomplete="off" autofocus>
-  <input type="submit" value="send" class="btn btn-dark" id="send">
-</form>
-</div>
+<div class="input-group mb-3" id="newMessage">
+    <input type="text" id="message" autocomplete="off" autofocus>
+    <div class="input-group-append">
+        <input type="submit" value="send" class="btn btn-dark" id="send">
+    </div>
+  </div>
+
 
 <script type="text/javascript">
 
