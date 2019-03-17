@@ -101,6 +101,20 @@ Chat Title
 /*--------------------
 Messages
 --------------------*/
+.messages-content::-webkit-scrollbar-track {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.messages-content::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.messages-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .messages {
   flex: 1 1 auto;
   color: rgba(255, 255, 255, 0.5);
@@ -109,6 +123,8 @@ Messages
   width: 100%;
 }
 .messages .messages-content {
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   top: 0;
   left: 0;
