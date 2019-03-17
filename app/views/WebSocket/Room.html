@@ -1,70 +1,72 @@
 {{set . "title" "Chat room"}}
 {{template "header.html" .}}
 
-<h1>
-  <div class="row">
-    <div class="col-sm-8 bg-info">You are now chatting as {{.user}}!</div> 
-    <div class="col-sm-2 bg-warning">Tired?</div>  
-    <div class="col-sm-2 bg-dark">  
-      <a id="leave" href="/">Leave</a>
+<div class="chat">
+ <div id="thread">
+    <div class="chat-title">
+      <h1> {{.user}}</h1>
+      <h2><a id="leave" href="/">Leave the chat room</a></h2>
     </div>
-  </div>
-</h1>
-<div id="chatWrapper">
-        <div id="thread">
-                <script type="text/html" id="message_tmpl">
-                  {{raw "<%"}} if(event.Type == 'message') { %>
-                  <div class="received_msg">
-                    <div class="received_withd_msg">
-                        <p>{{raw "<%"}}= event.User %>: {{raw "<%"}}= event.Text %></p>
-                    </div>
-                  </div>
-                  {{raw "<%"}} } %>
-                  {{raw "<%"}} if(event.Type == 'join') { %>
-                  <div class="received_alert">
-                    <div class="received_withd_msg">
-                          <p>{{raw "<%"}}= event.User %> joined the room</p>
-                    </div>
-                  </div>
-                  {{raw "<%"}} } %>
-                  {{raw "<%"}} if(event.Type == 'leave') { %>
-                  <div class="received_alert">
-                    <div class="received_withd_msg">
-                          <p>{{raw "<%"}}= event.User %> left the room</p>
-                    </div>
-                  </div>
-                  {{raw "<%"}} } %>
-                  {{raw "<%"}} if(event.Type == 'quit') { %>
-                  <div class="received_msg">
-                    <div class="received_withd_msg">
-                          <p>You are disconnected!</p>
-                          <span class="time_date"> 11:01 AM    |    Today</span>
-                    </div>
-                  </div>
-                  {{raw "<%"}} } %>
-                  </script>
-        </div>
-  <div class="type_msg" id="newMessage">
-      <div class="input_msg_write">
-        <input type="text" class="write_msg" id="message" placeholder="Type a message" />
-        <button class="msg_send_btn" type="submit" id="send"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+    <div class="messages">
+      <div class="messages-content">
+        <script type="text/html" id="message_tmpl">
+            {{raw "<%"}} if(event.Type == 'message') { %>
+          <div class="message <%= event.User == '{{.user}}' ? 'personal' : 'new' %>">
+            <h2>{{raw "<%"}}= event.User %></h2>
+             <p>
+                {{raw "<%"}}= event.Text %>
+             </p>
+          </div>
+            {{raw "<%"}} } %>
+            {{raw "<%"}} if(event.Type == 'join') { %>
+          <div class="message new">
+                ::before
+                {{raw "<%"}}= event.User %> joined the room
+            <div class="timestamp">13:13</div>
+          </div>
+            {{raw "<%"}} } %>
+            {{raw "<%"}} if(event.Type == 'leave') { %>
+          <div class="message message-personal new">
+              
+                  {{raw "<%"}}= event.User %> left the room
+              
+          </div>
+            {{raw "<%"}} } %>
+            {{raw "<%"}} if(event.Type == 'quit') { %>
+          <div class="message important">
+              <h2></h2>
+              <p>
+                You are now disconnected!
+              </p>
+          </div>
+            {{raw "<%"}} } %>
+        </script>
       </div>
+    </div>
   </div>
 
+  <div class="message-box" id="newMessage">
+    <textarea type="text" class="message-input" id="message" placeholder="Type message..."></textarea>
+    <button type="submit" value="send" id="send" class="message-submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+  </div>
 </div>
-
-  <!-- <div class="input-group mb-3" id="newMessage">
-    <input type="text" id="message" autocomplete="off" autofocus>
-    <div class="input-group-append">
-        <input type="submit" value="send" class="btn btn-dark" id="send">
-    </div>
-  </div> -->
-
+<div class="bg"></div>
 
 <script type="text/javascript">
 
   // Create a socket
   var socket = new WebSocket('ws://'+window.location.host+'/websocket/room/socket?user={{.user}}')
+
+  var $messages = $('.messages-content'),
+    d, h, m,
+    i = 0;
+
+  $(window).load(function() {
+    $messages.mCustomScrollbar();
+    setTimeout(function() {
+      fakeMessage();
+    }, 100);
+  });
 
   // Display a message
   var display = function(event) {

@@ -18,11 +18,14 @@ html, body {
 }
 
 #chatWrapper {
-    background-color: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.7);
+    /* background: rgba(18,194,233,0.1);
+    background: -webkit-linear-gradient(to right, rgba(18,194,233,0.1), rgba(196,113,237,0.1), rgba(246,79,89,0.1)); 
+    background: linear-gradient(to right, rgba(18,194,233,0.1), rgba(196,113,237,0.1), rgba(246,79,89,0.1)); */
     margin: auto;
     width: 40%;
     position: fixed;
-    top: 60px;
+    top: 140px;
     left: 14px;
     right: 14px;
     bottom: 10px;
@@ -33,7 +36,7 @@ html, body {
     margin: auto;
     width: 40%;
     position: fixed;
-    top: 60px;
+    top: 140px;
     left: 14px;
     right: 14px;
     bottom: 100px;
@@ -67,7 +70,7 @@ html, body {
     width: 50%;
    }
    .received_withd_msg p {
-    background: rgba(127,127,127, 0.3) none repeat scroll 0 0;
+    /* background: rgba(127,127,127, 0.3) none repeat scroll 0 0; */
     border-radius: 3px;
     color: hsl(0, 0%, 93%);
     font-family: 'Helvetica Neue', sans-serif; 
@@ -76,11 +79,19 @@ html, body {
     width: 100%;
   }
   .received_withd_msg { 
-      width: 100%; 
-      margin-bottom: 15px;
+    position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:3px solid #5a8f00;
+  color:#333;
+  background:rgba(0, 0, 0, 0.3);
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
     }
   .input_msg_write input {
-      opacity: 0.9;
+    opacity: 0.9;
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;
     color: #fff;
