@@ -86,21 +86,14 @@ Chat Title
   z-index: 2;
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
-  text-transform: uppercase;
   text-align: left;
   padding: 10px 10px 10px 50px;
   
-  h1, h2 {
-    font-weight: normal;
-    font-size: 16px;
-    margin: 0;
+  h1 {
+    font-variant: small-caps;
+    font-size: 30px;
+    margin-left: 10px;
     padding: 0;
-  }
-  
-  h2 {
-    color: rgba(255, 255, 255, .5);
-    font-size: 14px;
-    letter-spacing: 1px;
   }
   
   .avatar {
@@ -108,11 +101,11 @@ Chat Title
     z-index: 1;
     top: 8px;
     left: 9px;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
     overflow: hidden;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     border: 2px solid rgba(255, 255, 255, 0.24);
     
