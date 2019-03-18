@@ -1,9 +1,13 @@
 package controllers
 
 import (
+	"regexp"
+
 	"github.com/revel/revel"
 
 	"github.com/revel/examples/chat/app/chatroom"
+
+	"revelChat/app/twilio"
 )
 
 type WebSocket struct {
@@ -15,6 +19,10 @@ func (c WebSocket) Room(user string) revel.Result {
 }
 
 func (c WebSocket) RoomSocket(user string, ws revel.ServerWebSocket) revel.Result {
+
+	//Phone regular expression
+	re := regexp.MustCompile(`^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$`)
+
 	// Make sure the websocket is valid.
 	if ws == nil {
 		return nil
@@ -64,10 +72,13 @@ func (c WebSocket) RoomSocket(user string, ws revel.ServerWebSocket) revel.Resul
 				return nil
 			}
 
+			// If the message contains phone number execute Twilio logic
+			if re.MatchString(msg) {
+				msg = twilio.CallNumber(msg)
+			}
+
 			// Otherwise, say something.
 			chatroom.Say(user, msg)
 		}
 	}
-
-	return nil
 }

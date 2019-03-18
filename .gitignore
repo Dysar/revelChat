@@ -25,3 +25,5 @@ node_modules/
 *.rar
 *.tar
 *.zip
+
+*.json
