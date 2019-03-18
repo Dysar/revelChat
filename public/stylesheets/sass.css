@@ -116,6 +116,14 @@ Chat Title
   height: auto;
 }
 
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /*--------------------
 Messages
 --------------------*/
