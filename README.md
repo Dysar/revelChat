@@ -24,4 +24,4 @@ Please feel free to leave comments if you happen to visit this page and suggest 
 
 ## Demo
 
-![](https://github.com/Dysar/revelChat/blob/master/public/images/demo.png)
+![](https://github.com/Dysar/revelChat/blob/master/public/images/screely-1553024086978.jpg)
