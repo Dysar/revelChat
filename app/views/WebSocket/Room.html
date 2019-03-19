@@ -40,11 +40,15 @@
 
 // Create a socket
 var socket = new WebSocket('ws://'+window.location.host+'/websocket/room/socket?user={{.user}}')
+
+//move token to more secure place
 var authToken = "17ad55a9b8384777496330d23e59d520"
+
   // Message received on the socket
   socket.onmessage = function(event) {
     var data = JSON.parse(event.data)
     if(data.Type == 'message') {
+      data.Text = data.Text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       if(data.User == '{{.user}}'){
         if (data.Text.includes(authToken)) {
           var ret = data.Text.replace(authToken,'');

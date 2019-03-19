@@ -27,12 +27,5 @@ func (c Application) EnterDemo(user, phone string) revel.Result {
 		return c.Redirect(Application.Index)
 	}
 
-	//switch demo {
-	// case "refresh":
-	// 	return c.Redirect("/refresh?user=%s", user)
-	// case "longpolling":
-	// 	return c.Redirect("/longpolling/room?user=%s", user)
-	// case "websocket":
 	return c.Redirect("/websocket/room?user=%s", user)
-	//}
 }
