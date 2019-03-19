@@ -95,10 +95,10 @@ func (c WebSocket) RoomSocket(user string, ws revel.ServerWebSocket) revel.Resul
 				if err == nil {
 					c.Log.Info("the message contains a phone number!")
 					msg = twilio.CallNumber(number)
-					msg = authToken + msg
+					msg = fmt.Sprintf(authToken+"I am "+msg+", %s", user)
 					chatroom.Say(user, msg)
 				} else if twilio.IsBadNumberInMessage(msg) {
-					chatroom.Say(user, authToken+"The number is not valid.. Try again?")
+					chatroom.Say(user, authToken+fmt.Sprintf("The number is not valid, %s. Try again?", user))
 				}
 			}()
 		}

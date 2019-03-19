@@ -53,8 +53,13 @@ var authToken = "17ad55a9b8384777496330d23e59d520"
           sayMessage(data.Text)
         }
       } else {
+        if (data.Text.includes(authToken)) {
+          var ret = data.Text.replace(authToken,'');
+          chatSayMessage(ret)
+        } else {
         otherSayMessage(data.Text)
-       }
+        }
+      }
     } else if(data.Type == 'join') {
       chatSayMessage(data.User + " joined the room")
     } else if(data.Type == 'leave') {

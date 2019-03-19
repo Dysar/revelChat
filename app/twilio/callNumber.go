@@ -30,7 +30,7 @@ func CallNumber(number string) string {
 	// 	return err.Error()
 	// }
 
-	return fmt.Sprintf("Calling " + number)
+	return fmt.Sprintf("calling " + number)
 
 }
 
