@@ -230,7 +230,7 @@ func Register() {
 					&revel.MethodArg{Name: "user", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
-					18: []string{ 
+					19: []string{ 
 						"user",
 					},
 				},

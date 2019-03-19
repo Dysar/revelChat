@@ -5,11 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"net/url"
 	"os"
 	"strings"
-
-	"github.com/kevinburke/twilio-go"
 )
 
 type Auth struct {
@@ -18,32 +15,26 @@ type Auth struct {
 	Number     string
 }
 
-func CallNumber(msg string) string {
-
-	number, err := extractNumber(msg)
-
-	if err != nil {
-		return err.Error()
-	}
+func CallNumber(number string) string {
 
 	// Initialize twilio client
-	auth := getCredentials()
-	client := twilio.NewClient(auth.AccountSid, auth.AuthToken, nil)
+	_ = getCredentials()
+	// client := twilio.NewClient(auth.AccountSid, auth.AuthToken, nil)
 
-	var callURL, _ = url.Parse("https://kev.inburke.com/zombo/zombocom.mp3")
+	// var callURL, _ = url.Parse("https://kev.inburke.com/zombo/zombocom.mp3")
 
-	_, err = client.Calls.MakeCall(auth.Number, number,
-		callURL)
+	// _, err = client.Calls.MakeCall(auth.Number, number,
+	// 	callURL)
 
-	if err != nil {
-		return err.Error()
-	}
+	// if err != nil {
+	// 	return err.Error()
+	// }
 
 	return fmt.Sprintf("Calling " + number)
 
 }
 
-func extractNumber(msg string) (string, error) {
+func ExtractNumber(msg string) (string, error) {
 
 	for _, x := range strings.Split(msg, " ") {
 		if len(x) == 11 || len(x) == 12 {
@@ -53,7 +44,16 @@ func extractNumber(msg string) (string, error) {
 		}
 	}
 
-	return "", errors.New("I accept only Estonian cell numbers for now")
+	return "", errors.New(fmt.Sprintf("It was not Estonian cell number"))
+}
+
+func IsBadNumberInMessage(msg string) bool {
+
+	if strings.Contains(msg, "+3725") {
+		return true
+	}
+
+	return false
 }
 
 func getCredentials() *Auth {
