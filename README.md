@@ -16,7 +16,7 @@ You know who is participating in the chat, but knowing who said something partic
 
 ## Tech
 
-It was decided to Go :smirk: with [Revel](https://github.com/revel/revel) framework as it has a [chat example](https://github.com/revel/examples/tree/master/chat) already implemented and it has more features than the [Gorilla](https://github.com/gorilla/websocket/tree/master/examples/chat) one.
+It was decided to Go :smirk: with [Revel](https://github.com/revel/revel) framework as it has a [chat example](https://github.com/revel/examples/tree/master/chat) already implemented and it has more features than the [Gorilla WebSocket chat example](https://github.com/gorilla/websocket/tree/master/examples/chat).
 
 ## Feedback
 
