@@ -16,4 +16,4 @@ You know who is participating in the chat, but knowing who said something partic
 
 ## Demo
 
-![](https://github.com/Dysar/revelChat/blob/master/public/images/demo.png
+![](https://github.com/Dysar/revelChat/blob/master/public/images/demo.png)
