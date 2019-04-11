@@ -17,6 +17,29 @@ You know who is participating in the chat, but knowing who said something partic
  - UI using some cool [CodePens](https://codepen.io/) for the better UX,
  - [Twilio REST API](https://www.twilio.com/docs/usage/api) for making phone calls 
 
+## Deployment with Docker
+
+revelChat is very easy to install and deploy in a Docker container.
+
+```sh
+cd revelChat
+docker build -t revel-chat .
+docker run -it -p 8080:8080 revel-chat
+```
+
+This will create the image and pull in the necessary dependencies.
+
+Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8080 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
+
+```sh
+docker run -it -p 8080:8080 revel-chat
+```
+
+Verify the deployment by navigating to your server address in your preferred browser.
+
+```sh
+127.0.0.1:8080
+```
 
 ## Feedback
 
