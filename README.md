@@ -1,5 +1,5 @@
-# Hey, thanks for coming! This chat allows people to share the experience while using a chatbot for making phone calls
-
+# This chat allows people to share the experience while using a chatbot for making phone calls
+![](https://github.com/Dysar/revelChat/blob/master/public/images/screely-1553024086978.jpg)
 ## The idea
 
 The idea is to make interaction with a chatbot more social and let unlimited amount of peers use a chatbot and share the experience between each other.
@@ -45,6 +45,3 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 Please feel free to leave comments if you happen to visit this page and suggest what can be added or improved
 
-## Demo
-
-![](https://github.com/Dysar/revelChat/blob/master/public/images/screely-1553024086978.jpg)
